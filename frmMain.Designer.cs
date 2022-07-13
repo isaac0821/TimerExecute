@@ -202,9 +202,9 @@ namespace TimerExecute
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.8983F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.10169F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.76015F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.23985F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
             this.tableLayoutPanel4.Controls.Add(this.lblPathExe, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnFind, 2, 0);
@@ -221,9 +221,9 @@ namespace TimerExecute
             // 
             this.lblPathExe.AutoSize = true;
             this.lblPathExe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPathExe.Location = new System.Drawing.Point(41, 0);
+            this.lblPathExe.Location = new System.Drawing.Point(43, 0);
             this.lblPathExe.Name = "lblPathExe";
-            this.lblPathExe.Size = new System.Drawing.Size(229, 26);
+            this.lblPathExe.Size = new System.Drawing.Size(225, 26);
             this.lblPathExe.TabIndex = 3;
             this.lblPathExe.Text = "(Execute Path)";
             this.lblPathExe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,7 +234,7 @@ namespace TimerExecute
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 26);
+            this.label4.Size = new System.Drawing.Size(34, 26);
             this.label4.TabIndex = 1;
             this.label4.Text = "Path:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,10 +242,10 @@ namespace TimerExecute
             // btnFind
             // 
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFind.Location = new System.Drawing.Point(274, 1);
+            this.btnFind.Location = new System.Drawing.Point(272, 1);
             this.btnFind.Margin = new System.Windows.Forms.Padding(1);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(127, 24);
+            this.btnFind.Size = new System.Drawing.Size(129, 24);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
