@@ -8,3 +8,16 @@
 7/14/2022 3:24:34 PM: Goodbye!
 7/14/2022 3:25:55 PM: Welcome!
 7/14/2022 3:25:57 PM: Goodbye!
+7/14/2022 3:38:00 PM: Welcome!
+7/14/2022 3:41:26 PM: Load script D:\Weather\Demo.py
+7/14/2022 3:41:48 PM: Load script D:\Demo.py
+7/14/2022 3:48:01 PM: Start executing D:\Demo.py
+Line 1: Microsoft Windows [Version 10.0.22000.795]
+Line 2: (c) Microsoft Corporation. All rights reserved.
+Line 3: D:\Tools\TimerExecute\bin\Debug>D:\
+Line 4: D:\Tools\TimerExecute\bin\Debug>cd D:\
+Line 5: D:\>python Demo.py
+Line 6: This is a demo script.
+Line 7: D:\>exit
+7/14/2022 3:48:01 PM: Finished executing D:\Demo.py
+7/14/2022 3:52:02 PM: Goodbye!
