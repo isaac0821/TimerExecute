@@ -4,7 +4,7 @@
 
 #### 简介
 
-- `TimerExecute` 是一个用于定时单次或者多次执行python代码的小工具，同时具备执行日志的记录功能
+- `TimerExecute` 是一个用于定时单次或者多次执行python代码的小工具，同时具备记录执行日志和记录Python代码输出的功能
 - 代码使用 `.net framework 4.7.2` 框架
 
 #### 安装
