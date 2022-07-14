@@ -37,17 +37,16 @@ namespace TimerExecute
             // 
             this.lsbLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsbLog.FormattingEnabled = true;
-            this.lsbLog.ItemHeight = 15;
             this.lsbLog.Location = new System.Drawing.Point(0, 0);
             this.lsbLog.Name = "lsbLog";
-            this.lsbLog.Size = new System.Drawing.Size(359, 450);
+            this.lsbLog.Size = new System.Drawing.Size(308, 390);
             this.lsbLog.TabIndex = 0;
             // 
             // frmLog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 450);
+            this.ClientSize = new System.Drawing.Size(308, 390);
             this.Controls.Add(this.lsbLog);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLog";

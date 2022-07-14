@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerExecute", "TimerExecute.csproj", "{54DB8758-64F1-43FD-AED6-1101DC91D37C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerExecute", "TimerExecute.csproj", "{0C36364A-0021-4294-B526-B2A0EBAD9510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{54DB8758-64F1-43FD-AED6-1101DC91D37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54DB8758-64F1-43FD-AED6-1101DC91D37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54DB8758-64F1-43FD-AED6-1101DC91D37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54DB8758-64F1-43FD-AED6-1101DC91D37C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C36364A-0021-4294-B526-B2A0EBAD9510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C36364A-0021-4294-B526-B2A0EBAD9510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C36364A-0021-4294-B526-B2A0EBAD9510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C36364A-0021-4294-B526-B2A0EBAD9510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D3170AB7-AF64-418A-8896-6D76C1D18557}
+		SolutionGuid = {59117664-4333-4108-BF1E-00E88F2040FE}
 	EndGlobalSection
 EndGlobal

@@ -35,7 +35,8 @@ namespace TimerExecute
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblHour.Text = DateTime.Now.Hour < 12 ? DateTime.Now.Hour.ToString() : (DateTime.Now.Hour - 12).ToString();
+            lblHour.Text = ((DateTime.Now.Hour <= 12 ? DateTime.Now.Hour : (DateTime.Now.Hour - 12)) < 10 ? "0" : "")
+                + (DateTime.Now.Hour <= 12 ? DateTime.Now.Hour.ToString() : (DateTime.Now.Hour - 12).ToString());
             lblMinute.Text = (DateTime.Now.Minute < 10 ? "0" : "") + DateTime.Now.Minute.ToString();
             lblHalfDay.Text = DateTime.Now.Hour < 12 ? "AM" : "PM";
             lblHalfDay.ForeColor = DateTime.Now.Hour < 12 ? Color.Black : Color.Red;
@@ -65,7 +66,8 @@ namespace TimerExecute
         private void RefreshClock(object sender, EventArgs e)
         {
             curClockTimer.Interval = 1000 * 60;
-            lblHour.Text = DateTime.Now.Hour < 12 ? DateTime.Now.Hour.ToString() : (DateTime.Now.Hour - 12).ToString();
+            lblHour.Text = ((DateTime.Now.Hour <= 12 ? DateTime.Now.Hour : (DateTime.Now.Hour - 12)) < 10 ? "0" : "")
+                + (DateTime.Now.Hour <= 12 ? DateTime.Now.Hour.ToString() : (DateTime.Now.Hour - 12).ToString());
             lblMinute.Text = (DateTime.Now.Minute < 10 ? "0" : "") + DateTime.Now.Minute.ToString();
             lblHalfDay.Text = DateTime.Now.Hour < 12 ? "AM" : "PM";
             lblHalfDay.ForeColor = DateTime.Now.Hour < 12 ? Color.Black : Color.Red;
@@ -82,7 +84,7 @@ namespace TimerExecute
                     lblLastExe.Text = DateTime.Now.ToString();
                     lblLastExe.ForeColor = Color.Orange;
                     lblStatus.Text = "Executing";
-                                       
+
                     ExecuteFile();
 
                     if (!cycleExe)
@@ -142,10 +144,11 @@ namespace TimerExecute
                     FindNextExecute();
                     txtFreq.Enabled = true;
                 }
-                catch (Exception) { 
-                    lblNextExe.Text = "(No Schedule)"; 
-                    lblNextExe.ForeColor = Color.Black; 
-                    nextExe = null; 
+                catch (Exception)
+                {
+                    lblNextExe.Text = "(No Schedule)";
+                    lblNextExe.ForeColor = Color.Black;
+                    nextExe = null;
                 }
             }
             else
@@ -161,12 +164,13 @@ namespace TimerExecute
                 frequencyExe = Convert.ToDouble(txtFreq.Text);
                 FindNextExecute();
             }
-            catch (Exception) { 
-                lblNextExe.Text = "(No Schedule)"; 
-                lblNextExe.ForeColor = Color.Black; 
-                nextExe = null; 
+            catch (Exception)
+            {
+                lblNextExe.Text = "(No Schedule)";
+                lblNextExe.ForeColor = Color.Black;
+                nextExe = null;
             }
-        } 
+        }
 
         private void rdoCycle_CheckedChanged(object sender, EventArgs e)
         {
@@ -304,7 +308,7 @@ namespace TimerExecute
                 rdoHalfHour.Enabled = false;
                 rdoOneHour.Enabled = false;
                 rdoTwoHour.Enabled = false;
-                rdoOther.Enabled = false; 
+                rdoOther.Enabled = false;
                 lblLastExe.Text = "(No Record)";
                 lblNextExe.Text = "(No Schedule)";
                 lblPathExe.Text = "(Execute Path)";
@@ -316,7 +320,7 @@ namespace TimerExecute
                 lblStatus.ForeColor = Color.Black;
                 btnNow.Enabled = true;
                 btnStart.Enabled = true;
-                dtpStart.Enabled = true;                
+                dtpStart.Enabled = true;
                 rdoCycle.Enabled = true;
                 rdoRemain.Enabled = true;
                 rdoHalfHour.Enabled = true;
@@ -342,7 +346,7 @@ namespace TimerExecute
                 rdoHalfHour.Enabled = false;
                 rdoOneHour.Enabled = false;
                 rdoTwoHour.Enabled = false;
-                rdoOther.Enabled = false; 
+                rdoOther.Enabled = false;
                 if (nextExe != null)
                 {
                     lblNextExe.ForeColor = Color.Green;
@@ -445,6 +449,11 @@ namespace TimerExecute
             f.Flush();
             f.Close();
             Dispose();
+        }
+
+        private void frmMain_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
