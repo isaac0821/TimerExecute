@@ -21,3 +21,40 @@ Line 6: This is a demo script.
 Line 7: D:\>exit
 7/14/2022 3:48:01 PM: Finished executing D:\Demo.py
 7/14/2022 3:52:02 PM: Goodbye!
+7/15/2022 2:21:55 PM: Welcome!
+7/15/2022 2:22:06 PM: Goodbye!
+7/15/2022 2:30:18 PM: Welcome!
+7/15/2022 2:30:34 PM: Load script D:\Demo.py
+7/15/2022 2:30:36 PM: Start executing D:\Demo.py
+Line 1: Microsoft Windows [Version 10.0.22000.795]
+Line 2: (c) Microsoft Corporation. All rights reserved.
+Line 3: D:\Tools\TimerExecute\bin\Debug>D:\
+Line 4: D:\Tools\TimerExecute\bin\Debug>cd D:\
+Line 5: D:\>python Demo.py
+Line 6: Hello world
+Line 7: D:\>exit
+7/15/2022 2:30:36 PM: Finished executing D:\Demo.py
+7/15/2022 2:30:39 PM: Start executing D:\Demo.py
+Line 1: Microsoft Windows [Version 10.0.22000.795]
+Line 2: (c) Microsoft Corporation. All rights reserved.
+Line 3: D:\Tools\TimerExecute\bin\Debug>D:\
+Line 4: D:\Tools\TimerExecute\bin\Debug>cd D:\
+Line 5: D:\>python Demo.py
+Line 6: Hello world
+Line 7: D:\>exit
+7/15/2022 2:30:39 PM: Finished executing D:\Demo.py
+7/15/2022 2:31:24 PM: Goodbye!
+7/15/2022 2:41:21 PM: Welcome!
+7/15/2022 2:41:28 PM: Load script D:\Demo.py
+7/15/2022 2:41:29 PM: Start executing D:\Demo.py
+Line 1: Microsoft Windows [Version 10.0.22000.795]
+Line 2: (c) Microsoft Corporation. All rights reserved.
+Line 3: D:\Tools\TimerExecute\bin\Debug>D:\
+Line 4: D:\Tools\TimerExecute\bin\Debug>cd D:\
+Line 5: D:\>python Demo.py
+Line 6: Hello world
+Line 7: D:\>exit
+7/15/2022 2:41:29 PM: Finished executing D:\Demo.py
+7/15/2022 2:41:47 PM: Goodbye!
+7/15/2022 2:42:30 PM: Welcome!
+7/15/2022 2:42:33 PM: Goodbye!

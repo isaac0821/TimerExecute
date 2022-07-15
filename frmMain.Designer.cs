@@ -29,6 +29,7 @@ namespace TimerExecute
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,6 +69,7 @@ namespace TimerExecute
             this.rdoRemain = new System.Windows.Forms.RadioButton();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.txtRemain = new System.Windows.Forms.TextBox();
+            this.nicMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -205,7 +207,7 @@ namespace TimerExecute
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.83285F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.16714F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel4.Controls.Add(this.lblPathExe, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnFind, 2, 0);
@@ -224,7 +226,7 @@ namespace TimerExecute
             this.lblPathExe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPathExe.Location = new System.Drawing.Point(47, 0);
             this.lblPathExe.Name = "lblPathExe";
-            this.lblPathExe.Size = new System.Drawing.Size(274, 23);
+            this.lblPathExe.Size = new System.Drawing.Size(270, 23);
             this.lblPathExe.TabIndex = 3;
             this.lblPathExe.Text = "(Execute Path)";
             this.lblPathExe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,10 +245,10 @@ namespace TimerExecute
             // btnFind
             // 
             this.btnFind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFind.Location = new System.Drawing.Point(325, 1);
+            this.btnFind.Location = new System.Drawing.Point(321, 1);
             this.btnFind.Margin = new System.Windows.Forms.Padding(1);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(50, 21);
+            this.btnFind.Size = new System.Drawing.Size(54, 21);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -604,6 +606,14 @@ namespace TimerExecute
             this.txtRemain.Text = "1";
             this.txtRemain.TextChanged += new System.EventHandler(this.txtRemain_TextChanged);
             // 
+            // nicMain
+            // 
+            this.nicMain.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.nicMain.Icon = ((System.Drawing.Icon)(resources.GetObject("nicMain.Icon")));
+            this.nicMain.Text = "TimerExecute";
+            this.nicMain.Visible = true;
+            this.nicMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.nicMain_MouseDoubleClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,11 +623,11 @@ namespace TimerExecute
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.Text = "Timer Execute - v0.0.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -676,6 +686,7 @@ namespace TimerExecute
         private System.Windows.Forms.Label lblLastExe;
         private System.Windows.Forms.Button btnLog;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.NotifyIcon nicMain;
     }
 }
 

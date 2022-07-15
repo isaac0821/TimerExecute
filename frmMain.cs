@@ -48,6 +48,8 @@ namespace TimerExecute
             lastExe = null;
             nextExe = null;
 
+            nicMain.Visible = false;
+
             // 每一分钟绘制一次当前的时刻
             TimeSpan secToNextMin = new TimeSpan();
             DateTime datetimeWithoutSec = new DateTime(
@@ -62,7 +64,7 @@ namespace TimerExecute
             curClockTimer.Start();
             curClockTimer.Tick += RefreshClock;
         }
-
+        int fixClock = 0;
         private void RefreshClock(object sender, EventArgs e)
         {
             curClockTimer.Interval = 1000 * 60;
@@ -267,11 +269,22 @@ namespace TimerExecute
                     lblLastExe.ForeColor = Color.Green;
 
                     sysLog.Add(DateTime.Now.ToString() + ": " + "Finished executing " + lblPathExe.Text);
+
+                    int tipShowMilliseconds = 5000;
+                    string tipTitle = "Execute succeed";
+                    string tipContent = "Finished executing " + lblPathExe.Text;
+                    ToolTipIcon tipType = ToolTipIcon.Info;
+                    nicMain.ShowBalloonTip(tipShowMilliseconds, tipTitle, tipContent, tipType);
                 }
                 catch (Exception)
                 {
                     lblLastExe.ForeColor = Color.Red;
                     sysLog.Add(DateTime.Now.ToString() + ": " + "Failed executing " + lblPathExe.Text);
+                    int tipShowMilliseconds = 5000;
+                    string tipTitle = "Execute Failed";
+                    string tipContent = "Failed executing " + lblPathExe.Text;
+                    ToolTipIcon tipType = ToolTipIcon.Error;
+                    nicMain.ShowBalloonTip(tipShowMilliseconds, tipTitle, tipContent, tipType);
                 }
             }
             else
@@ -448,12 +461,29 @@ namespace TimerExecute
             }
             f.Flush();
             f.Close();
+            nicMain.Dispose();
             Dispose();
         }
 
-        private void frmMain_Load_1(object sender, EventArgs e)
+        private void frmMain_Resize(object sender, EventArgs e)
         {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                this.ShowInTaskbar = false;
+                nicMain.Visible = true;
+            }
+        }
 
+        private void nicMain_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                nicMain.Visible = false;
+                this.ShowInTaskbar = true;
+            }
         }
     }
 }
