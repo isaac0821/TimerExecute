@@ -89,11 +89,12 @@ namespace TimerExecute
 
             if ((cycleExe || remainExe > 0) && frequencyExe > 0 && nextExe != null && lblStatus.Text == "Waiting")
             {
-                if (DateTime.Now.Year == (nextExe ?? new DateTime(9999, 12, 31)).Year &&
+                if ((DateTime.Now.Year == (nextExe ?? new DateTime(9999, 12, 31)).Year &&
                     DateTime.Now.Month == (nextExe ?? new DateTime(9999, 12, 31)).Month &&
                     DateTime.Now.Day == (nextExe ?? new DateTime(9999, 12, 31)).Day &&
                     DateTime.Now.Hour == (nextExe ?? new DateTime(9999, 12, 31)).Hour &&
-                    DateTime.Now.Minute == (nextExe ?? new DateTime(9999, 12, 31)).Minute)
+                    DateTime.Now.Minute == (nextExe ?? new DateTime(9999, 12, 31)).Minute) || 
+                    (DateTime.Now > (nextExe ?? new DateTime(9999, 12, 31))))
                 {
                     lastExe = DateTime.Now;
                     lblLastExe.Text = DateTime.Now.ToString();
