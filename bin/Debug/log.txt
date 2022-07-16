@@ -58,3 +58,13 @@ Line 7: D:\>exit
 7/15/2022 2:41:47 PM: Goodbye!
 7/15/2022 2:42:30 PM: Welcome!
 7/15/2022 2:42:33 PM: Goodbye!
+7/15/2022 5:18:40 PM: Welcome!
+7/15/2022 5:18:48 PM: Goodbye!
+7/15/2022 5:20:02 PM: Welcome!
+7/15/2022 5:20:09 PM: Goodbye!
+7/15/2022 5:22:27 PM: Welcome!
+7/15/2022 5:22:31 PM: Goodbye!
+7/15/2022 6:03:28 PM: Welcome!
+7/15/2022 6:03:31 PM: Goodbye!
+7/15/2022 6:07:02 PM: Welcome!
+7/15/2022 6:07:07 PM: Goodbye!

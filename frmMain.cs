@@ -60,14 +60,27 @@ namespace TimerExecute
                 DateTime.Now.Minute,
                 0);
             secToNextMin = DateTime.Now - datetimeWithoutSec;
-            curClockTimer.Interval = (int)(1000 * (60 - secToNextMin.TotalSeconds));
+            int interval = (int)(1000 * (60 - secToNextMin.TotalSeconds));
+            if (interval == 0) { interval = 1000 * 60; }
+            curClockTimer.Interval = interval;
             curClockTimer.Start();
             curClockTimer.Tick += RefreshClock;
         }
-        int fixClock = 0;
         private void RefreshClock(object sender, EventArgs e)
         {
-            curClockTimer.Interval = 1000 * 60;
+            TimeSpan secToNextMin = new TimeSpan();
+            DateTime datetimeWithoutSec = new DateTime(
+                DateTime.Now.Year,
+                DateTime.Now.Month,
+                DateTime.Now.Day,
+                DateTime.Now.Hour,
+                DateTime.Now.Minute,
+                0);
+            secToNextMin = DateTime.Now - datetimeWithoutSec;
+            int interval = (int)(1000 * (60 - secToNextMin.TotalSeconds));
+            if (interval == 0) { interval = 1000 * 60; }
+            curClockTimer.Interval = interval;
+
             lblHour.Text = ((DateTime.Now.Hour <= 12 ? DateTime.Now.Hour : (DateTime.Now.Hour - 12)) < 10 ? "0" : "")
                 + (DateTime.Now.Hour <= 12 ? DateTime.Now.Hour.ToString() : (DateTime.Now.Hour - 12).ToString());
             lblMinute.Text = (DateTime.Now.Minute < 10 ? "0" : "") + DateTime.Now.Minute.ToString();
