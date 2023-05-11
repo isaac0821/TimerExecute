@@ -244,66 +244,66 @@ namespace TimerExecute
 
         private void ExecuteFile()
         {
-            // 执行py文件
-            if (executeFileExtension == ".py")
+            // 执行py文件           
+            sysLog.Add(DateTime.Now.ToString() + ": " + "Start executing " + lblPathExe.Text);
+            try
             {
-                sysLog.Add(DateTime.Now.ToString() + ": " + "Start executing " + lblPathExe.Text);
-                try
-                {
-                    Process cmd = new Process();
-                    cmd.StartInfo.FileName = "cmd.exe";
-                    cmd.StartInfo.UseShellExecute = false;
-                    cmd.StartInfo.RedirectStandardInput = true;
-                    cmd.StartInfo.RedirectStandardOutput = true;
-                    cmd.StartInfo.RedirectStandardError = true;
-                    cmd.StartInfo.CreateNoWindow = true;
-                    cmd.Start();
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "cmd.exe";
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.StartInfo.RedirectStandardInput = true;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.RedirectStandardError = true;
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.Start();
 
-                    cmd.StandardInput.WriteLine(executeFileDisk);
-                    cmd.StandardInput.WriteLine("cd " + executeFilePath);
+                cmd.StandardInput.WriteLine(executeFileDisk);
+                cmd.StandardInput.WriteLine("cd " + executeFilePath);
+                if (executeFileExtension == ".py")
+                {
                     cmd.StandardInput.WriteLine("python " + executeFileName);
-                    cmd.StandardInput.WriteLine("exit");
-
-                    StreamReader output = cmd.StandardOutput;
-                    string line = "";
-                    int num = 1;
-                    while ((line = output.ReadLine()) != null)
-                    {
-                        if (line != "")
-                        {
-                            sysLog.Add("Line " + num.ToString() + ": " + line);
-                            num++;
-                        }
-                    }
-                    cmd.WaitForExit();
-                    cmd.Close();
-
-                    lastExe = DateTime.Now;
-                    lblLastExe.Text = lastExe.ToString();
-                    lblLastExe.ForeColor = Color.Green;
-
-                    sysLog.Add(DateTime.Now.ToString() + ": " + "Finished executing " + lblPathExe.Text);
-
-                    int tipShowMilliseconds = 5000;
-                    string tipTitle = "Execute succeed";
-                    string tipContent = "Finished executing " + lblPathExe.Text;
-                    ToolTipIcon tipType = ToolTipIcon.Info;
-                    nicMain.ShowBalloonTip(tipShowMilliseconds, tipTitle, tipContent, tipType);
                 }
-                catch (Exception)
+                else if (executeFileExtension == ".bat")
                 {
-                    lblLastExe.ForeColor = Color.Red;
-                    sysLog.Add(DateTime.Now.ToString() + ": " + "Failed executing " + lblPathExe.Text);
-                    int tipShowMilliseconds = 5000;
-                    string tipTitle = "Execute Failed";
-                    string tipContent = "Failed executing " + lblPathExe.Text;
-                    ToolTipIcon tipType = ToolTipIcon.Error;
-                    nicMain.ShowBalloonTip(tipShowMilliseconds, tipTitle, tipContent, tipType);
+                    cmd.StandardInput.WriteLine(executeFileName);
                 }
+                cmd.StandardInput.WriteLine("exit");
+
+                StreamReader output = cmd.StandardOutput;
+                string line = "";
+                int num = 1;
+                while ((line = output.ReadLine()) != null)
+                {
+                    if (line != "")
+                    {
+                        sysLog.Add("Line " + num.ToString() + ": " + line);
+                        num++;
+                    }
+                }
+                cmd.WaitForExit();
+                cmd.Close();
+
+                lastExe = DateTime.Now;
+                lblLastExe.Text = lastExe.ToString();
+                lblLastExe.ForeColor = Color.Green;
+
+                sysLog.Add(DateTime.Now.ToString() + ": " + "Finished executing " + lblPathExe.Text);
+
+                int tipShowMilliseconds = 5000;
+                string tipTitle = "Execute succeed";
+                string tipContent = "Finished executing " + lblPathExe.Text;
+                ToolTipIcon tipType = ToolTipIcon.Info;
+                nicMain.ShowBalloonTip(tipShowMilliseconds, tipTitle, tipContent, tipType);
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Stay tune for non-python script support");
+                lblLastExe.ForeColor = Color.Red;
+                sysLog.Add(DateTime.Now.ToString() + ": " + "Failed executing " + lblPathExe.Text);
+                int tipShowMilliseconds = 5000;
+                string tipTitle = "Execute Failed";
+                string tipContent = "Failed executing " + lblPathExe.Text;
+                ToolTipIcon tipType = ToolTipIcon.Error;
+                nicMain.ShowBalloonTip(tipShowMilliseconds, tipTitle, tipContent, tipType);
             }
         }
 
